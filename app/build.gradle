@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
+
+    defaultConfig {
+        applicationId "com.tuan.osmdemo"
+        minSdkVersion 21
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+//    compile files('libs/osmdroid-android-5.5-release-sources.jar')
+    compile files('libs/slf4j-android-1.6.1-RC1.jar')
+
+    compile 'org.osmdroid:osmdroid-android:5.5:release@aar'
+//    compile 'org.slf4j:slf4j-simple:1.6.1'
+
+}
